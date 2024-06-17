@@ -1,33 +1,10 @@
-from typing import List, Dict
-from dataclasses import dataclass
-from datetime import datetime
+# transaction.py
+from app import db
+from models import Transaction
 
-@dataclass
-class Transaction:
-    id: str
-    block_height: int
-    timestamp: datetime
-    sender: str
-    recipient: str
-    amount: float
+class TransactionService:
+    def get_transactions_by_block(self, block_id):
+        return Transaction.query.filter_by(block_id=block_id).all()
 
-    def to_dict(self) -> Dict:
-        return {
-            'id': self.id,
-            'block_height': self.block_height,
-            'timestamp': self.timestamp.isoformat(),
-            'ender': self.sender,
-            'ecipient': self.recipient,
-            'amount': self.amount
-        }
-
-    @classmethod
-    def from_dict(cls, data: Dict) -> 'Transaction':
-        return cls(
-            id=data['id'],
-            block_height=data['block_height'],
-            timestamp=datetime.fromisoformat(data['timestamp']),
-            sender=data['sender'],
-            recipient=data['recipient'],
-            amount=data['amount']
-        )
+    def get_transaction_by_id(self, transaction_id):
+        return Transaction.query.get(transaction_id)
