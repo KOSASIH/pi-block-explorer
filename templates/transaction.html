@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Transaction {{ transaction.id }}</h1>
+    <table class="table table-striped">
+        <tr>
+            <th>ID</th>
+            <td>{{ transaction.id }}</td>
+        </tr>
+        <tr>
+            <th>Block Height</th>
+            <td>{{ transaction.block_height }}</td>
+        </tr>
+        <tr>
+            <th>Timestamp</th>
+            <td>{{ transaction.timestamp }}</td>
+        </tr>
+        <tr>
+            <th>Sender</th>
+            <td>{{ transaction.sender }}</td>
+        </tr>
+        <tr>
+            <th>Recipient</th>
+            <td>{{ transaction.recipient }}</td>
+        </tr>
+        <tr>
+            <th>Amount</th>
+            <td>{{ transaction.amount }}</td>
+        </tr>
+    </table>
+{% endblock %}
