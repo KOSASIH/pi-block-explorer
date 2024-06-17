@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Block {{ block.height }}</h1>
+    <table class="table table-striped">
+        <tr>
+            <th>Height</th>
+            <td>{{ block.height }}</td>
+        </tr>
+        <tr>
+            <th>Hash</th>
+            <td>{{ block.hash }}</td>
+        </tr>
+        <tr>
+            <th>Previous Hash</th>
+            <td>{{ block.previous_hash }}</td>
+        </tr>
+        <tr>
+            <th>Timestamp</th>
+            <td>{{ block.timestamp }}</td>
+        </tr>
+        <tr>
+            <th>Transactions</th>
+            <td>
+                <ul>
+                    {% for transaction in block.transactions %}
+                        <li><a href="/transactions/{{ transaction.id }}">{{ transaction.id }}</a></li>
+                    {% endfor %}
+                </ul>
+            </td>
+        </tr>
+    </table>
+{% endblock %}
