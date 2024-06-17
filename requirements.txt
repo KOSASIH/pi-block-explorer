@@ -3,6 +3,6 @@ flask==2.0.1
 flask_bootstrap==3.3.7.1
 flask_wtf==0.15.1
 wtforms==2.3.3
-requests==2.25.1
+requests==2.32.2
 beautifulsoup4==4.9.3
 lxml==4.6.3
