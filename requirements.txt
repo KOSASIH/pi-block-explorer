@@ -1,5 +1,5 @@
 python==3.9.5
-flask==2.0.1
+flask==2.2.5
 flask_bootstrap==3.3.7.1
 flask_wtf==0.15.1
 wtforms==2.3.3
